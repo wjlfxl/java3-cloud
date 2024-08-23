@@ -1,0 +1,36 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: springcloud-zuul #gateway 微服务名称
+
+#Eureka
+# Eureka配置：配置服务注册中心地址
+eureka:
+  client:
+    service-url:
+      # 注册中心地址7001-7003
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: zuul9002.com    #修改eureka上的默认描述信息!Status
+    prefer-ip-address: true     #加了地址变成：http://192.168.0.4:8001/actuator/info
+
+# info配置
+info:
+  app.name: springcloud-wjl  # 项目的名称
+  company.name: 武汉学院   # 公司的名称
+
+# zull 路由网关配置
+zuul:
+  # 路由相关配置
+  # 原来访问路由 eg:http://www.wjl.com:9002/springcloud-provider-user/user/get/1
+  # zull路由配置后访问路由 eg:http://www.wjl.com:9002/myuser/user/get/1
+  routes:
+    myuser.serviceId: springcloud-provider-user # eureka注册中心的服务提供方路由名称
+    # myuser.serviceId   自定义.固定写法
+    myuser.path: /myuser/** # 将eureka注册中心的服务提供方路由名称 改为自定义路由名称
+  # 不能再使用这个路径访问了，*： 忽略,隐藏全部的服务名称~
+  ignored-services: '*'  # 不能访问http://www.wjl.com:9002/springcloud-provider-user/user/get/1
+  # 设置公共的前缀
+  prefix: /wjl   #访问网址之前要加 http://www.wjl.com:9002/wjl/myuser/user/get/1

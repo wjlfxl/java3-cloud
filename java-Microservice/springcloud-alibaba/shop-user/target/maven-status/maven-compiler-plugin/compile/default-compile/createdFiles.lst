@@ -1,0 +1,5 @@
+springcloud\controller\UserController.class
+springcloud\ShopUserApplication.class
+springcloud\service\UserService.class
+springcloud\service\impl\UserServiceImpl.class
+springcloud\dao\UserRepository.class

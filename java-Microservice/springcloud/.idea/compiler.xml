@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springcloud-config-client-3355" />
+        <module name="springcloud-eureka-7003" />
+        <module name="springcloud-eureka-7002" />
+        <module name="springcloud-eureka-7001" />
+        <module name="springcloud-config-eureka-7002" />
+        <module name="springcloud-config-eureka-7001" />
+        <module name="springcloud-config-eureka-7003" />
+        <module name="springcloud-provider-user-8003" />
+        <module name="springcloud-api" />
+        <module name="springcloud-provider-user-8002" />
+        <module name="springcloud-provider-user-8001" />
+        <module name="springcloud-consumer-user-80" />
+        <module name="springcloud-consumer-hystrix-dashboard" />
+        <module name="springcloud-config-user-8001" />
+        <module name="springcloud-config-user-8002" />
+        <module name="springcloud-provider-user-hystrix-8003" />
+        <module name="springcloud-config-server-3344" />
+        <module name="springcloud-config-user-8003" />
+        <module name="springcloud-consumer-user-feign" />
+        <module name="springcloud-provider-user-hystrix-8001" />
+        <module name="springcloud-provider-user-hystrix-8002" />
+        <module name="springcloud-zuul-9002" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="springcloud-config-consumer-80" target="8" />
+      <module name="springcloud-config-dept-8001" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

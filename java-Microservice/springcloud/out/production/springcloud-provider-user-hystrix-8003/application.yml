@@ -1,0 +1,36 @@
+server:
+  port: 8003
+
+mybatis:
+  type-aliases-package: springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+
+spring:
+  application:
+    name: springcloud-provider-user
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource   #数据源
+    driver-class-name: org.gjt.mm.mysql.Driver  #gjt 继承了mysql
+    url: jdbc:mysql://localhost:3306/market3?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: 123456
+    username: root
+
+
+#Eureka
+# Eureka配置：配置服务注册中心地址
+eureka:
+  client:
+    service-url:
+      # 注册中心地址7001-7003
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+  instance:
+    instance-id: springcloud-provider-user-hystrix-8003    #修改eureka上的默认描述信息!Status
+#    prefer-ip-address: true     #加了地址变成：http://192.168.0.4:8001/actuator/info
+
+# info配置
+info:
+  app.name: springcloud-wjl  # 项目的名称
+  company.name: 武汉学院   # 公司的名称

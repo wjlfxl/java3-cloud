@@ -1,0 +1,13 @@
+server:
+  port: 9001
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"   #需要加这个配置，没有监控画面的，加在dashboard里
+
+# 一直loading加在dashboard里
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

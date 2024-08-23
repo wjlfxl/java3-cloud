@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: zuul-gateway
+server:
+  port: 5555
+
+zuul:
+#  prefix: /api
+  routes:
+    traditional-url:                             #传统的路由配置,此名称可以自定义
+      path: /tr-url/**                           #映射的url
+      url: http://localhost:9001/           #被映射的url
+    orient-service-url:                       #面向服务的路由配置,此名称可以自定义
+      path: /os-url/**
+      service-id: feign-customer           #服务名
+  ignored-services: feign-customer,eureka-service
+  #ignored-patterns: /**/hello/**
+#  AccessFilter:
+#    pre:
+#      disable: true          #禁用名为AccessFilter的过滤器
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:1111/eureka/

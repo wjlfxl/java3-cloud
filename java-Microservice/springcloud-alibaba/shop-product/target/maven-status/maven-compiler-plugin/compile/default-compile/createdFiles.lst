@@ -1,0 +1,5 @@
+springcloud\service\ProductService.class
+springcloud\ShopProductApplication.class
+springcloud\service\impl\ProductServiceImpl.class
+springcloud\controller\ProductController.class
+springcloud\dao\ProductDao.class

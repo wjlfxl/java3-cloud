@@ -1,0 +1,8 @@
+springcloud\dta\OrderDto.class
+springcloud\ShopCommonApplication.class
+springcloud\entity\Product.class
+springcloud\entity\TxLog.class
+springcloud\dta\UserDto.class
+springcloud\dta\ProductDto.class
+springcloud\entity\Order.class
+springcloud\entity\User.class

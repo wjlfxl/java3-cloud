@@ -1,0 +1,67 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  application:
+    name: springcloud-config-user
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource   #数据源
+    driver-class-name: org.gjt.mm.mysql.Driver  #gjt 继承了mysql
+    url: jdbc:mysql://localhost:3306/market1?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: 123456
+    username: root
+  profiles: dev
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-user-8001   
+
+
+info:
+  app.name: springcloud-wjl  # 项目的名称
+  company.name: 武汉学院   # 公司的名称
+
+---
+server:
+  port: 8001
+
+mybatis:
+  type-aliases-package: springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+spring:
+  profiles: test
+  application:
+    name: springcloud-config-user
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource   #数据源
+    driver-class-name: org.gjt.mm.mysql.Driver  #gjt 继承了mysql
+    url: jdbc:mysql://localhost:3306/market2?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    password: 123456
+    username: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-user-8001    
+
+# info配置
+info:
+  app.name: springcloud-wjl  # 项目的名称
+  company.name: 武汉学院   # 公司的名称
